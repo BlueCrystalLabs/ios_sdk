@@ -9,6 +9,7 @@
 #import "ADJConfig.h"
 #import "ADJAdjustFactory.h"
 #import "ADJLogger.h"
+#import "ADJUtil.h"
 
 @implementation ADJConfig
 
@@ -45,7 +46,7 @@
 }
 
 - (void) setDelegate:(NSObject<AdjustDelegate> *)delegate {
-    if (delegate == nil) {
+    if ([ADJUtil isNull:delegate]) {
         _delegate = nil;
         self.hasDelegate = NO;
         return;
@@ -67,7 +68,7 @@
 - (BOOL) checkEnvironment:(NSString *)environment
 {
     id<ADJLogger> logger = ADJAdjustFactory.logger;
-    if (environment == nil) {
+    if ([ADJUtil isNull:environment]) {
         [logger error:@"Missing environment"];
         return NO;
     }
@@ -83,7 +84,7 @@
 }
 
 - (BOOL)checkAppToken:(NSString *)appToken {
-    if (appToken == nil) {
+    if ([ADJUtil isNull:appToken]) {
         [ADJAdjustFactory.logger error:@"Missing App Token"];
         return NO;
     }
