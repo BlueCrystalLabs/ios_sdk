@@ -67,14 +67,14 @@ static NSTimeInterval intervalTimerStart = -1;
     return intervalSubsessionInterval;
 }
 
-+ (NSTimeInterval)TimerInterval {
++ (NSTimeInterval)timerInterval {
     if (internalTimerInterval == -1) {
         return 60;                // 1 minute
     }
     return internalTimerInterval;
 }
 
-+ (NSTimeInterval)TimerStart {
++ (NSTimeInterval)timerStart {
     if (intervalTimerStart == -1) {
         return 0;                 // 0 seconds
     }
