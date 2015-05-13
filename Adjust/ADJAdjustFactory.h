@@ -23,6 +23,8 @@
 + (id<ADJLogger>)logger;
 + (double)sessionInterval;
 + (double)subsessionInterval;
++ (NSTimeInterval)timerInterval;
++ (NSTimeInterval)timerStart;
 + (id<ADJAttributionHandler>)attributionHandlerForActivityHandler:(id<ADJActivityHandler>)activityHandler
                                            withAttributionPackage:(ADJActivityPackage *) attributionPackage
                                                       startPaused:(BOOL)startPaused
